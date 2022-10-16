@@ -8,7 +8,7 @@ let context = canvas.getContext('2d');
 let width = context.canvas.width;
 let height = context.canvas.height;
 
-let randomx = Math.floor(Math.random()* width;
+let randomx = Math.floor(Math.random()* width);
 let randomy = Math.floor(Math.random()* height);
 // //console.log(randomx, randomy);
 
