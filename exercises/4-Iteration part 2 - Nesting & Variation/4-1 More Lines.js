@@ -1,20 +1,28 @@
 "use strict";
+import context from "../../scripts/context.js";
 import * as Utils from "../../scripts/utils.js";
 
-let horizonaLines = 120;
-let vertalLines = 30;
+let horizontalLines = 60;
+let verticalLines = 30;
 
 let width = 600;
 let height = 300;
 
 drawLines();
+drawLines();
 
 function drawLines() {
-	for (let i = 0; i < horizonaLines; i++) {
-		Utils.drawLine(0 + 10 * 1, 0, width - 10 * 1, height);
-	}
+	context.strokeStyle = "white";
+	context.fillStyle = "red";
 
-	for (let i = 0; i < horizonaLines; i++) {
-		Utils.drawLine(0 + 10 * 1, 0, width - 10 * 1, height);
+	context.fillRect(0, 0, width, height);
+
+	let step = width / horizontalLines;
+	for (let i = 0; i < horizontalLines; i++) {
+		Utils.drawLine(0 + step * i, 0, width - step * i, height);
+	}
+	let step2 = height / verticalLines;
+	for (let i = 0; i <= verticalLines; i++) {
+		Utils.drawLine(0, 0 + step2 * i, width, height - step2 * i);
 	}
 }
